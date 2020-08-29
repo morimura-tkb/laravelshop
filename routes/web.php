@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/shopping/manage','ManageController@index');
+Route::get('/shopping/manage/product_add','ManageController@create');
+Route::post('/shopping/manage/product_add','ManageController@add');
+Route::get('/shopping/manage/product_edit','ManageController@edit');
+Route::post('/shopping/manage/product_edit','ManageController@id_edit');
+Route::post('/shopping/manage/product_update','ManageController@update');
+Route::post('/shopping/manage/product_delete','ManageController@delete');
 
 Route::get('/shopping/products/{id}/{page_id?}','ProductsController@index')->name('shopping.index');
 Route::post('/shopping/search_result/{page_id?}','ProductsController@search');

@@ -33,6 +33,9 @@
 @section('subtitle',$subtitles[$id])
 
 @section('content')
+    @if(isset($msg))
+    {{$msg}}
+    @endif
     <div class="products">
         @foreach($products as $product)
             <table class="products_table" border="1">

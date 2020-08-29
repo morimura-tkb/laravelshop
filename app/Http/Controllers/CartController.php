@@ -46,8 +46,10 @@ class CartController extends Controller
                 return view('users.message',['msg'=>$msg]);
             }
         }else{
-            $msg = "$limited"."歳未満の方は購入できません。";
-            return view('users.message',['msg'=>$msg]);
+            $product = Product::find($product_id);
+            $msg = "$product->name"."は"."$limited"."歳未満の方は購入できません。";
+            $data = ['msg'=>$msg];
+            return view('users.message',$data);
         }
     }
 

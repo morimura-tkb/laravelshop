@@ -56,7 +56,7 @@ class ProductsController extends Controller
     }
 
     public function paging($page_id,$count){
-        define('MAX','1');
+        define('MAX','3');
         $now = $page_id;
         $start_no = ($now - 1) * MAX;
         $max_page = ceil($count/MAX);
